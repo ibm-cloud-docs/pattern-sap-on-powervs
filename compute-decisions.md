@@ -21,4 +21,4 @@ keywords:
 | Compute (HANA)                                  | Target an environment to match workload requirements and be SAP certified          | Power Virtual Server LPARs |Hardware flexibility limited to nonproduction environments \n For production use the SAP-certified profiles
 | Backup server (Spectrum Storage Protect) | Backup server sized for enough available storage                                | Bare Metal on Classic        |Bare Metal on Classic can accommodate large storage requirements for backups |
 | Virtual Servers (Edge VPC)               | Virtual servers for workloads in the Edge VPC                                   | VPC Virtual Servers          |                                                                                  |
-{: caption="Table 1. Architecture decisions for compute" caption-side="bottom"}
+{: caption="Architecture decisions for compute" caption-side="bottom"}

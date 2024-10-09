@@ -50,7 +50,7 @@ The following table shows a comparison of the different deployment options.
 |                             |                 |Medium/high cost                                                                                        |                                                                                    |
 | Multi-zone, Multi-Region    | 99.99%          |Protection from region outages                                                                          |Disaster Recovery
 |                             |                 |High cost                                                                                               |Business continuity policies with cross-geo or cross-country requirements       |
-{: caption="Table 1. Resiliency options" caption-side="bottom"}
+{: caption="Resiliency options" caption-side="bottom"}
 
 1. Based on Cloud infrastructure
    [SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external}

@@ -30,4 +30,4 @@ keywords:
 |                                   |                                                        |Aspera data transfer                                                                                                                                 | Minimize
 |                                   |                                                        | GLVM                                                                                                                                                 | Business disruption due to migration
 |                                   |                                                        |     | Cost and efforts that are incurred in testing migrated databases                     |                    |
-{: caption="Table 1. Architecture decisions for storage" caption-side="bottom"}
+{: caption="Architecture decisions for storage" caption-side="bottom"}

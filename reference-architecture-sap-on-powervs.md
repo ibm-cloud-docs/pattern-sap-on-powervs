@@ -33,7 +33,7 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 ## Architecture Diagram
 {: #architecture-diagram}
 
-![SAP Single-zone, multi-region deployment on IBM Cloud PowerVS](image1.png){: caption="Figure 1. SAP Single-zone, multi-region deployment on IBM Cloud PowerVS" caption-side="bottom"}
+![SAP Single-zone, multi-region deployment on IBM Cloud PowerVS](image1.png){: caption="SAP Single-zone, multi-region deployment on IBM Cloud PowerVS" caption-side="bottom"}
 
 
 1. Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
@@ -51,7 +51,7 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 Figure 2 illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
 ![illustrates a detailed network and component architecture for a
-single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="Figure 2. A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
+single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
 
 ### Architecture description
 {: #architecture-description}
@@ -101,7 +101,7 @@ to make the necessary design and component choices to ensure the
 applicable requirements for each aspect and domain have been
 considered.
 
-![domains that are covered in this solution](image3.png){: caption="Figure 3. Domains that are covered in this solution" caption-side="bottom"}
+![domains that are covered in this solution](image3.png){: caption="Domains that are covered in this solution" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
@@ -135,7 +135,7 @@ successful SAP deployment.
 |                    | Cloud infrastructure for the proposed IaaS solution must be SAP Certified                                                                                                                                                                                                                                                             |
 |                    | IBM Cloud IaaS is deployed to support SAP and surrounding non-SAP workloads                                                                                                                                                                                                                                                      |
 |                    | The customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider a Cloud deployment solution that would facilitate a future RISE transformation |
-{: caption="Table 1. Requirements" caption-side="bottom"}
+{: caption="Requirements" caption-side="bottom"}
 
 ## Components
 {: #components}
@@ -174,7 +174,7 @@ successful SAP deployment.
 |                                    | Native database backup capabilities                                                                                                                                                                         | AnyDB backups                                                                                               |
 | Service Management (Observability) | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                                             |
 |                                    | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Application and operational logs                                                                            |
-{: caption="Table 2. Components" caption-side="bottom"}
+{: caption="Components" caption-side="bottom"}
 
 As mentioned earlier, the [Architecture
 Framework](/docs/architecture-framework?topic=architecture-framework-intro)
