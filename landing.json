@@ -1,10 +1,11 @@
 {
   "title": "SAP on Power Virtual Server",
   "lastupdated": "2024-11-07",
-  "introduction": "This is a landing page for the reference architecture describing how to host SAP on IBM Power Virtual Server environment.",
+  "version": "v2024.11.07",
+  "introduction":"This is a landing page for the reference architecture describing how to host SAP on IBM Power Virtual Server environment.",
   "section_architectures": [
     {
-      "title": "Oracle Database Disaster Recovery between Customer DC and IBM PowerVS",
+      "title": "SAP on IBM Power Virtual Servers",
       "href": "docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-overview",
       "deployable": false
     }
