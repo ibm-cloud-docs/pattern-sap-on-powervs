@@ -1,7 +1,6 @@
 {
+  "version": 2,
   "title": "SAP on Power Virtual Server",
-  "lastupdated": "2024-11-07",
-  "version": "v2024.11.07",
   "introduction":"This is a landing page for the reference architecture describing how to host SAP on IBM Power Virtual Server environment.",
   "section_architectures": [
     {
