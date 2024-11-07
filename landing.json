@@ -6,7 +6,7 @@
   "section_architectures": [
     {
       "title": "SAP on IBM Power Virtual Servers",
-      "href": "docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-overview",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-overview",
       "deployable": false
     }
   ]
