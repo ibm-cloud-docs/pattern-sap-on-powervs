@@ -1,25 +1,14 @@
-
 ---
+
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-11-12"
 
 subcollection: pattern-sap-on-powervs
-
 keywords:
-# The release that the reference architecture describes
 
-authors:
-  - name: Doug Eppard
-
-version: 1.0
-
-deployment-url:
-
-docs: https://cloud.ibm.com/docs/pattern-sap-on-powervs
-
-content-type: reference-architecture
 ---
+
 {{site.data.keyword.attribute-definition-list}}
 
 # SAP on Power Virtual Server
@@ -167,7 +156,7 @@ successful SAP deployment.
 |                                    | [Virtual Private Clouds (VPCs), Subnets, Security Groups, ACLs](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)                                                                     | Core Network Protection and isolation                                                                       |
 |                                    | Isolated PowerVS LPARs                                                                                                                                                                                      |                                                                                                             |
 |                                    | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)                                                                                                                   | DDoS protection and Web App Firewall                                                                        |
-|                                    |Choose one of the following: \n  - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n  - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                      |IPS/IDS protection at all ingress/egress \n Unified Threat Management (UTM) Firewall                                                                |
+|                                    |Choose one of the following: \n  - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global)  \n  - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                      |IPS/IDS protection at all ingress/egress \n Unified Threat Management (UTM) Firewall                                                                |
 | Resiliency                         | HANA System Replication (HSR)                                                                                                                                                                               | Provide 99.95% availability for HANA DB                                                                     |
 |                                    | [IBM Storage Protect](https://cloud.ibm.com/media/docs/downloads/power-iaas/PowerVS_AIX_Backup_Performance_Best_Practices_and_Guidelines_v1_0_03012022.pdf)                                                 | Backups and restores for images and file systems.                                                           |
 |                                    | [GRS](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started-GRS)                                                                                                                           |                                                                                                             |
