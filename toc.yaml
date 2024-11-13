@@ -39,6 +39,8 @@ toc:
             navtitle: Security
           - topic: resiliency-considerations.md
             navtitle: Resiliency
+          - topic: service-management-consideration.md
+            navtitle: Service Management
           - topic: migration-considerations.md
             navtitle: Migration
       - topicgroup:
