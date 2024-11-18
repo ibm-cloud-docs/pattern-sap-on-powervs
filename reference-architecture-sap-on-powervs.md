@@ -162,7 +162,7 @@ successful SAP deployment.
 |                                    | Native database backup capabilities                                                                                                                                                                         | AnyDB backups                                                                                               |
 | Service Management (Observability) | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                                             |
 |                                    | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Application and operational logs                                                                            |
-{: caption="Table 2. Components" caption-side="bottom"}
+{: caption="Components" caption-side="bottom"}
 
 As mentioned earlier, the [Architecture
 Framework](/docs/architecture-framework?topic=architecture-framework-intro)
