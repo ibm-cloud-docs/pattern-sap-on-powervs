@@ -123,7 +123,7 @@ successful SAP deployment.
 |                    | Cloud infrastructure for the proposed IaaS solution must be SAP Certified                                                                                                                                                                                                                                                             |
 |                    | IBM Cloud IaaS is deployed to support SAP and surrounding non-SAP workloads                                                                                                                                                                                                                                                      |
 |                    | The customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider a Cloud deployment solution that would facilitate a future RISE transformation |
-{: caption="Table 1. Requirements" caption-side="bottom"}
+{: caption="Requirements" caption-side="bottom"}
 
 ## Components
 {: #components}
