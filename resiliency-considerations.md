@@ -74,32 +74,31 @@ Single Point Failures of SAP S/4HANA on IBM Power Systems Virtual Servers:
 
 The SAP HANA database supports high availability in a distributed system by providing for host auto-failover. If an active host fails, for example, because of a hardware failure, standby hosts can take over and ensure the continued availability of the database. 
 
-IBM Power Systems Virtual Servers are designed by hardened configuration within single data center to provide 99.95% SLA. For more details, please refer to  https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document 
+IBM Power Systems Virtual Servers are designed by hardened configuration within single data center to provide 99.95% SLA. For more details, please refer to [IBM Terms](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document)
 
 To increase availability for SAP systems on IBM Power Systems Virtual servers, High Availability instances can be deployed with “Different Server” placement group, and Disaster Recovery systems can be deployed in a different region.
 
 To setup HA cluster for SAP applications and databases, both data replication and cluster management should be considered. Data replication can be done with database native methods, OS native tools, as well as third party continuous data protection tools. Cluster management on Linux can be done with Red Hat High Availability Add-On or SUSE High Availability Extension.
 
-For more information on SAP HA Implementation on IBM Cloud: https://cloud.ibm.com/docs/sap?topic=sap-ha-overview 
+For more information on SAP HA Implementation on IBM Cloud: [SAP HA](https://cloud.ibm.com/docs/sap?topic=sap-ha-overview)
 
 Availability for SAP Central services :
 
 The following should not be different for classic/VPC/PVS, since it is more on Operating System/Application layer. 
-1.	SAP documents on ASCS/ERS1: 
-https://community.sap.com/t5/technology-blogs-by-members/sap-ascs-high-availability-using-ers-explained/ba-p/13511647
-2.	SAP documents on ERS1 and ENSA2:  
-https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/evolution-of-ensa2-and-ers2/ba-p/13481209 
+1.	SAP documents on ASCS/ERS1: [SAP Doc](https://community.sap.com/t5/technology-blogs-by-members/sap-ascs-high-availability-using-ers-explained/ba-p/13511647){: external}
+2.	SAP documents on ERS1 and ENSA2: [SAP Doc](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/evolution-of-ensa2-and-ers2/ba-p/13481209){: external}
 3.	SUSE documents on setting up HA: 
-•	ERS1 https://documentation.suse.com/sbp/sap-15/html/SAP-nw740-sle15-setupguide/index.html 
-•	ENSA2: https://documentation.suse.com/sbp/sap-12/html/SAP_S4HA10_SetupGuide-SLE12/index.html 
+•	[ERS1](https://documentation.suse.com/sbp/sap-15/html/SAP-nw740-sle15-setupguide/index.html){: external}
+•	[ENSA2](https://documentation.suse.com/sbp/sap-12/html/SAP_S4HA10_SetupGuide-SLE12/index.html){: external}
 4.	RHEL documents on setting up HA: 
-•	ERS1 https://access.redhat.com/articles/3569681
-•	ENSA2 https://access.redhat.com/articles/3974941 
+•	[ERS1](https://access.redhat.com/articles/3569681){: external}
+•	[ENSA2](https://access.redhat.com/articles/3974941){: external}
+
 
 
 High Availability for SAP HANA :
 
-1.	SAP Documentation on SAP HANA replications, including synchronization mode and operation mode: https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/6d252db7cdd044d19ad85b46e6c294a4.html
-2.	IBM Cloud documentation on SAP HANA high Availability: https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-hana-sr  
-3.	SUSE documentation on SAP HANA high availability: https://documentation.suse.com/sles-sap/sap-ha-support/html/sap-ha-support/index.html
-4.	RHEL documentation on SAP HANA high availability: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_for_sap_solutions/8/html/red_hat_ha_solutions_for_sap_hana_s4hana_and_netweaver_based_sap_applications/asmb_sh_ha_sol_for_hana_ha-sol-hana-netweaver 
+1.	SAP Documentation on SAP HANA replications, including synchronization mode and operation mode: [SAP Doc](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/6d252db7cdd044d19ad85b46e6c294a4.html){: external}
+2.	IBM Cloud documentation on SAP HANA high Availability: [SAP HA](https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-hana-sr)
+3.	SUSE documentation on SAP HANA high availability: [SUSE DOC](https://documentation.suse.com/sles-sap/sap-ha-support/html/sap-ha-support/index.html){: external}
+4.	RHEL documentation on SAP HANA high availability: [RHEL DOC](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_for_sap_solutions/8/html/red_hat_ha_solutions_for_sap_hana_s4hana_and_netweaver_based_sap_applications/asmb_sh_ha_sol_for_hana_ha-sol-hana-netweaver){: external}
