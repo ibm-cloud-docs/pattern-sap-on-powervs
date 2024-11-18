@@ -26,9 +26,9 @@ A resilient design will include Backup&Recovery and, may include Disaster Recove
 Backup and Recovery:
 
 For HANA data protection, SAP provides tools: 
-•	HANA Studio - An integrated development environment for managing, modeling, and monitoring SAP HANA databases.
-•	HANACOCKPIT - A web-based tool for administering, monitoring, and managing SAP HANA systems.
-•	Backint - A certified SAP interface for integrating third-party backup tools with SAP HANA for backup and restore operations.
+- HANA Studio - An integrated development environment for managing, modeling, and monitoring SAP HANA databases.
+- HANACOCKPIT - A web-based tool for administering, monitoring, and managing SAP HANA systems.
+- Backint - A certified SAP interface for integrating third-party backup tools with SAP HANA for backup and restore operations.
 
 For SAP certified HANA backup tools, please refer to SAP note 2031547.
 On IBM Power System Virtual Servers, Veeam, Spectrum Protect and Cobalt Iron from Compass are recommended tools and services.
@@ -39,8 +39,8 @@ Disaster Recovery is to recover and restore system operations after a disruptive
 
 A performance-optimized disaster recovery (DR) solution is designed to not only recover from disruptions but also to do so in a manner that minimizes downtime and maintains performance levels close to or as good as the production environment. The goal is to ensure that recovery operations are efficient and that the DR site performs well during and after failover. 
 
-1. Low Recovery Time Objective (RTO): Aim to minimize the time it takes to restore services to their normal state. This involves using technologies and strategies that allow for quick failover, such as pre-staged and fully synchronized replicas of data and systems.
-2. Low Recovery Point Objective (RPO): Ensure that data loss is kept to a minimum by implementing frequent, near-real-time data replication and backup solutions. 
+- Low Recovery Time Objective (RTO): Aim to minimize the time it takes to restore services to their normal state. This involves using technologies and strategies that allow for quick failover, such as pre-staged and fully synchronized replicas of data and systems.
+- Low Recovery Point Objective (RPO): Ensure that data loss is kept to a minimum by implementing frequent, near-real-time data replication and backup solutions. 
 A cost-optimized disaster recovery (DR) solution aims to balance the need for effective disaster recovery with budget constraints. The focus is on achieving reliable recovery while managing and minimizing expenses.
 
 Instead of dedicated infrastructure for DR systems, which may be idle most of the time, shared infrastructure may be configured so that DR systems share the same compute with Non-Production systems, if segmentation/compliance/licensing/Non-Production system availability and other client requirements allow.
@@ -62,11 +62,11 @@ Single Point Failures of SAP S/4HANA on IBM Power Systems Virtual Servers:
 
 | Components       | Recommendation   | 
 |------------------|------------------|
-| SAP Web Dispatcher                 | https://help.sap.com/doc/saphelp_nw73ehp1/7.31.19/en-us/48/9a9a6b48c673e8e10000000a42189b/frameset.htm    |
-| SAP Central Services (ASCS for ABAP system, SCS for Java system)                 | ****************************************************        |
+| SAP Web Dispatcher                 | [SAP Web Dispatcher ](https://help.sap.com/doc/saphelp_nw73ehp1/7.31.19/en-us/48/9a9a6b48c673e8e10000000a42189b/frameset.htm){: external }    |
+| SAP Central Services (ASCS for ABAP system, SCS for Java system)                 |              |
 | SAP Application server                 | Multiple application servers        |
-| SAP HANA                 | ****************************************************        |
-| Shared Storage                 | https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-nfs        |
+| SAP HANA                 |               |
+| Shared Storage                 | [SAP Web Dispatcher ](https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-nfs)       |
 | Networking                 | Highly available IBM Cloud services. For example, Direct Link, Transit Gateway, Application Load Balancer        |
 
 {: caption="Resiliency options" caption-side="bottom"}
