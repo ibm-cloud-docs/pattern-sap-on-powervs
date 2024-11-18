@@ -23,7 +23,7 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 ## Architecture Diagram
 {: #architecture-diagram}
 
-![SAP Single-zone, multi-region deployment on IBM Cloud PowerVS](image1.png){: caption="Figure 1. SAP Single-zone, multi-region deployment on IBM Cloud PowerVS" caption-side="bottom"}
+![SAP Single-zone, multi-region deployment on IBM Cloud PowerVS](image1.png){: caption="SAP Single-zone, multi-region deployment on IBM Cloud PowerVS" caption-side="bottom"}
 
 
 1. Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
@@ -40,8 +40,7 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 
 Figure 2 illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
-![illustrates a detailed network and component architecture for a
-single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="Figure 2. A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
+![illustrates a detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
 
 ### Architecture description
 {: #architecture-description}
