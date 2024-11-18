@@ -25,10 +25,10 @@ IBM Power Virtual Server offers you the option to select an I/O operation per se
 
 The following tiers of FlashSystem storage is available for IBM Power System Virtual servers:
 
-•	Fixed IOPs (5000 IOPs) - Provides a fixed performance level of 5000 IOPs, ideal for predictable workloads.
-•	Tier 0 - High-performance storage for latency-sensitive, mission-critical applications.
-•	Tier 1 - Balanced storage option offering a mix of performance and capacity for high performance like HANA.
-•	Tier 3 - Cost-effective, general-purpose storage designed for less demanding, archival, or backup workloads
+- Fixed IOPs (5000 IOPs) - Provides a fixed performance level of 5000 IOPs, ideal for predictable workloads.
+- Tier 0 - High-performance storage for latency-sensitive, mission-critical applications.
+- Tier 1 - Balanced storage option offering a mix of performance and capacity for high performance like HANA.
+- Tier 3 - Cost-effective, general-purpose storage designed for less demanding, archival, or backup workloads
 
 For each Power Systems Virtual Server instance, select storage from a variety of storage tiers.  For the most up to date documentation see the [storage tiers topic](/docs/power-iaas?topic=power-iaas-about-virtual-server#storage-tiers).
 
