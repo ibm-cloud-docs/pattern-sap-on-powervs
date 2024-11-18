@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-11-12"
 
 subcollection: pattern-sap-on-powervs
 
@@ -15,114 +15,91 @@ keywords:
 # Resiliency design
 {: #resiliency-design}
 
-Resiliency is the ability of a workload to meet a specific target
-Service Level Objective (SLO), Service Level Availability (SLA) or
-recover from a service disruption and still meet the required SLA.
-Resiliency needs to be considered at both the infrastructure and
-application layers across the entire solution.
+Resiliency solution components:
 
-A resilient design might include Disaster Recovery (DR) and High
-Availability (HA) depending on SLA requirements and they are two
-different things.
+Resiliency is the ability of a workload to meet a specific target Service Level Objective (SLO), Service Level Availability (SLA) or recover from a service disruption and still meet the required SLA.  Resiliency needs to be considered at both the infrastructure and application layers across the entire solution.
+PVS regions
 
-Disaster Recovery is the infrastructure, application layers, and
-accompanying set of policies and procedures to enable the recovery or
-continuation of vital technology infrastructure and applications
-following a natural or human-induced disaster.
+A resilient design will include Backup&Recovery and, may include Disaster Recovery (DR) and High Availability (HA) depending on Service Level Availability (SLA) requirements. 
 
-High Availability is the resource availability in a solution throughout
-the stack, built in by design, to withstand individual component
-failures in the system.
 
-Both DR and HA can be enabled by using several technologies and approaches that depend on the Recovery Point Objective (RPO), Recovery Time
-Objective (RTO) and SLA requirements.
+Backup and Recovery:
 
-The following table shows a comparison of the different deployment options.
+For HANA data protection, SAP provides tools: 
+•	HANA Studio - An integrated development environment for managing, modeling, and monitoring SAP HANA databases.
+•	HANACOCKPIT - A web-based tool for administering, monitoring, and managing SAP HANA systems.
+•	Backint - A certified SAP interface for integrating third-party backup tools with SAP HANA for backup and restore operations.
 
-| Deployment    | Availability | Description   | Recommended use   |
-|------------------|------------------|------------------|------------------|
-| Single Zone                 | 99.9%^1^        |Single instance (single point of failure) or multiple instances (protect from infrastructure failures) |Low to medium priority applications                                             |
-|                             |                 |Low/Medium cost                                                                                         |Nonproduction environment                                                      |
-| Single Zone; Multi-Instance | 99.95%          |Multi-instance (protects from infrastructure failures)                                                  |Core business applications                                                      |
-|                             |                 |                                                                                                            |Production level environments with resiliency requirements not exceeding 99.95% |
-| Multi-zone, Single Region   | 99.99%^2^       |Redundant resources                                                                                     |Core business applications                                                      |
-|                             |                 |Protection from zone outages                                                                            |Production level environments with stringent resiliency requirements
-|                             |                 |Medium/high cost                                                                                        |                                                                                    |
-| Multi-zone, Multi-Region    | 99.99%          |Protection from region outages                                                                          |Disaster Recovery
-|                             |                 |High cost                                                                                               |Business continuity policies with cross-geo or cross-country requirements       |
+For SAP certified HANA backup tools, please refer to SAP note 2031547.
+On IBM Power System Virtual Servers, Veeam, Spectrum Protect and Cobalt Iron from Compass are recommended tools and services.
+
+Disaster Recovery:
+
+Disaster Recovery is to recover and restore system operations after a disruptive event. These events can range from natural disasters like earthquakes or floods to man-made events like cyber-attacks, power outages, or hardware failures. 
+
+A performance-optimized disaster recovery (DR) solution is designed to not only recover from disruptions but also to do so in a manner that minimizes downtime and maintains performance levels close to or as good as the production environment. The goal is to ensure that recovery operations are efficient and that the DR site performs well during and after failover. 
+
+1. Low Recovery Time Objective (RTO): Aim to minimize the time it takes to restore services to their normal state. This involves using technologies and strategies that allow for quick failover, such as pre-staged and fully synchronized replicas of data and systems.
+2. Low Recovery Point Objective (RPO): Ensure that data loss is kept to a minimum by implementing frequent, near-real-time data replication and backup solutions. 
+A cost-optimized disaster recovery (DR) solution aims to balance the need for effective disaster recovery with budget constraints. The focus is on achieving reliable recovery while managing and minimizing expenses.
+
+Instead of dedicated infrastructure for DR systems, which may be idle most of the time, shared infrastructure may be configured so that DR systems share the same compute with Non-Production systems, if segmentation/compliance/licensing/Non-Production system availability and other client requirements allow.
+
+Also, using reduced-size compute for dedicated DR systems may be an option as well. To reserve the capacity for DR systems, Shared Processor Pool can be setup with a small fee.
+
+High Availability :
+
+High Availability Purpose and Metrics- 
+
+High Availability is to ensure systems remain operational and accessible with minimal downtime, even in the event of failures. The goal of HA is to provide continuous service by eliminating single points of failure and ensuring that critical components have redundant systems or processes in place. 
+
+Service Level Availability (SLA) is the major metrics for high availability. When SLA requirement for the SAP application is higher than 99.5%, it is recommended to implement HA.
+
+
+
+Single Point Failures of SAP S/4HANA on IBM Power Systems Virtual Servers:
+
+
+| Components       | Recommendation   | 
+|------------------|------------------|
+| SAP Web Dispatcher                 | https://help.sap.com/doc/saphelp_nw73ehp1/7.31.19/en-us/48/9a9a6b48c673e8e10000000a42189b/frameset.htm    |
+| SAP Central Services (ASCS for ABAP system, SCS for Java system)                 | ****************************************************        |
+| SAP Application server                 | Multiple application servers        |
+| SAP HANA                 | ****************************************************        |
+| Shared Storage                 | https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-nfs        |
+| Networking                 | Highly available IBM Cloud services. For example, Direct Link, Transit Gateway, Application Load Balancer        |
+
 {: caption="Resiliency options" caption-side="bottom"}
 
-1. Based on Cloud infrastructure
-   [SLA](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external}
-    Does not represent application availability
 
-2. 3 or more instances in separate Availability Zones
+The SAP HANA database supports high availability in a distributed system by providing for host auto-failover. If an active host fails, for example, because of a hardware failure, standby hosts can take over and ensure the continued availability of the database. 
 
-SAP does not support the application layer and database to be deployed across different zones. The application and database layers must exist in the same availability zone or COLO. Therefore, the highest availability that can be supported is 99.95%.
+IBM Power Systems Virtual Servers are designed by hardened configuration within single data center to provide 99.95% SLA. For more details, please refer to  https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document 
 
-For more information on Resiliency on IBM Cloud, see [High Availability and Resiliency on IBM Cloud](/docs/ha-infrastructure?topic=ha-infrastructure-landing-about-ha-dr-backup).
+To increase availability for SAP systems on IBM Power Systems Virtual servers, High Availability instances can be deployed with “Different Server” placement group, and Disaster Recovery systems can be deployed in a different region.
 
-Depending on requirements and design, an SAP deployment on IBM cloud can
-support 99.95% availability. Unfortunately, SAP does not certify
-solutions that span multiple zones, so resiliency is deployed to a
-single zone with multiple server instances in the same zone.
+To setup HA cluster for SAP applications and databases, both data replication and cluster management should be considered. Data replication can be done with database native methods, OS native tools, as well as third party continuous data protection tools. Cluster management on Linux can be done with Red Hat High Availability Add-On or SUSE High Availability Extension.
 
-The IBM Cloud application load balancer along with SAP Web Dispatcher
-spreads client requests or loads across 2 or more server instances for
-improved resiliency and improved performance. In addition, IBM Cloud
-load balancers do health checks to make sure that only healthy virtual
-server instances receive client requests.
+For more information on SAP HA Implementation on IBM Cloud: https://cloud.ibm.com/docs/sap?topic=sap-ha-overview 
 
-IBM Power Systems Virtual Servers are designed by hardened configuration
-within a single data center to provide 99.95% SLA. For more details, refer
-to [Service Level Agreements for IBM Cloud](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document){: external}.
+Availability for SAP Central services :
 
-To increase availability for SAP systems on IBM Power Systems Virtual
-servers, High Availability instances can be deployed within the same
-data center with "Different Server" [placement
-group](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-placement-groups),
-and Disaster Recovery systems can be deployed in a different region.
+The following should not be different for classic/VPC/PVS, since it is more on Operating System/Application layer. 
+1.	SAP documents on ASCS/ERS1: 
+https://community.sap.com/t5/technology-blogs-by-members/sap-ascs-high-availability-using-ers-explained/ba-p/13511647
+2.	SAP documents on ERS1 and ENSA2:  
+https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/evolution-of-ensa2-and-ers2/ba-p/13481209 
+3.	SUSE documents on setting up HA: 
+•	ERS1 https://documentation.suse.com/sbp/sap-15/html/SAP-nw740-sle15-setupguide/index.html 
+•	ENSA2: https://documentation.suse.com/sbp/sap-12/html/SAP_S4HA10_SetupGuide-SLE12/index.html 
+4.	RHEL documents on setting up HA: 
+•	ERS1 https://access.redhat.com/articles/3569681
+•	ENSA2 https://access.redhat.com/articles/3974941 
 
-To maximize investment on DR infrastructure so DR infrastructure is not
-idle, it's recommended to have cross-region passive DR deployed on
-reduced-size VMs. To reserve the capacity for DR systems, a [Shared Processor Pool](https://www.ibm.com/docs/en/power9?topic=systems-managing-shared-processor-pools){: external}
-can be setup with a small fee.
 
-Alternative cost optimized DR systems can be configured so that DR
-systems share infrastructure with Non-Production systems, if
-segmentation/compliance/licensing/Non-Production system availability and
-other client requirements allow.
+High Availability for SAP HANA :
 
-The IBM Cloud environment does not support any preconfigured
-high-availability (HA) scenarios for SAP. However, HA scenarios can be
-configured based on the HA extension for the operating system. HA
-extensions are created by adding the required hardware and the required
-software components to SAP landscapes.
-
-For example, see [Network layout for Scale-out configurations](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2)
-for an overview of a single-zone resilient SAP Scale-out deployment.
-
-A combination of SAP Native Database Backup tools is used to deliver the
-resiliency services such as:
-
-- DBACOCKPIT
-
-- HANACOCKPIT
-
-- Backint for SAP Database backups
-
-To support database recovery for points in time going back at least one
-month, a daily database backup is required, along with redo log backups
-every 15 minutes.
-
-- For long-term recovery of data, an additional monthly backup is suggested with a one-year data retention or as determined by the customer.
-
-- The daily log backup frequency for production DB should be less than or equal to the customer wanted RPO parameter for their Business Continuity Plan.
-
-- Production System Monthly full retained for 60 days. Daily Full retained for 1 week. Daily incremental retained for 60 days. Weekly Full retained for 30 days.
-
-- Non-Productions System Monthly full retained for 60 days. Weekly Full retained for 14 days. Daily incremental retained for 60 days.
-
-Consider the largest DB size for full backups with room for addition
-growth. Recommend complementing the backup solution with daily snapshots
-for production.
+1.	SAP Documentation on SAP HANA replications, including synchronization mode and operation mode: https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/6d252db7cdd044d19ad85b46e6c294a4.html
+2.	IBM Cloud documentation on SAP HANA high Availability: https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-hana-sr  
+3.	SUSE documentation on SAP HANA high availability: https://documentation.suse.com/sles-sap/sap-ha-support/html/sap-ha-support/index.html
+4.	RHEL documentation on SAP HANA high availability: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_for_sap_solutions/8/html/red_hat_ha_solutions_for_sap_hana_s4hana_and_netweaver_based_sap_applications/asmb_sh_ha_sol_for_hana_ha-sol-hana-netweaver 
