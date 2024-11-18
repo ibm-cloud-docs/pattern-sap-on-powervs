@@ -40,7 +40,7 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 
 Figure 2 illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
-![illustrates a detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
+![A single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
 
 ### Architecture description
 {: #architecture-description}
@@ -91,7 +91,7 @@ to make the necessary design and component choices to ensure the
 applicable requirements for each aspect and domain have been
 considered.
 
-![domains that are covered in this solution](image3.png){: caption="Figure 3. Domains that are covered in this solution" caption-side="bottom"}
+![domains that are covered in this solution](image3.png){: caption="Domains that are covered in this solution" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
