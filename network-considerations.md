@@ -33,4 +33,10 @@ Cloud Internet Services (CIS) is an FS Validated service [IBM Terms](https://www
 
 For a list of all Networking Considerations, see [networking design considerations](/docs/sap?topic=sap-networking-design-considerations).
 
-Quick summary on connections: \n  -  Enterprise on-prem to IBM Cloud connection: Direct Link is a cloud native offering with built in high availability. Deploying multiple Direct Links can further increase availability. \n  - Internet traffic to IBM Cloud: CIS. \n  - Connection between VPCs and Power System Virtual Server workspaces: Transit Gateway and Power Edge Routers. \n  - Inter region connections: Global Transit Gateway. \n  -  Workloads segregation: Security Groups and ACLs can be configured with Edge VPC, Management VPC, SAP workloads in Power workspaces and Workload VPCs. \n  - Latency and network bandwidth considerations: 10 Gbps network bandwidth is usually required between SAP application and HANA. SAP Application and database layers should be closed to avoid unnecessary latency, hence it is not recommended to be separated on different platforms or availability zones.
+Quick summary on connections:
+-  Enterprise on-prem to IBM Cloud connection: Direct Link is a cloud native offering with built in high availability. Deploying multiple Direct Links can further increase availability.
+- Internet traffic to IBM Cloud: CIS. 
+- Connection between VPCs and Power System Virtual Server workspaces: Transit Gateway and Power Edge Routers.
+- Inter region connections: Global Transit Gateway.
+-  Workloads segregation: Security Groups and ACLs can be configured with Edge VPC, Management VPC, SAP workloads in Power workspaces and Workload VPCs.
+- Latency and network bandwidth considerations: 10 Gbps network bandwidth is usually required between SAP application and HANA. SAP Application and database layers should be closed to avoid unnecessary latency, hence it is not recommended to be separated on different platforms or availability zones.
