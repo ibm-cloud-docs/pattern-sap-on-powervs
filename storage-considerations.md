@@ -30,7 +30,7 @@ The following tiers of FlashSystem storage is available for IBM Power System Vir
 - Tier 1 - Balanced storage option offering a mix of performance and capacity for high performance like HANA.
 - Tier 3 - Cost-effective, general-purpose storage designed for less demanding, archival, or backup workloads
 
-For each Power Systems Virtual Server instance, select storage from a variety of storage tiers.  For the most up to date documentation see the [storage tiers topic](/docs/power-iaas?topic=power-iaas-about-virtual-server#storage-tiers).
+For each Power Systems Virtual Server instance, select storage from a variety of storage tiers. 
 
 Specific SAP storage guidelines can be found at [Storage Guidelines for SAP HANA based on Flexible IOPS](/docs/sap?topic=sap-storage-design-considerations#sap-fiops-config)
 
