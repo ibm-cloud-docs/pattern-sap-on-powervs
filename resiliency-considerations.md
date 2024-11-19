@@ -23,7 +23,7 @@ PVS regions
 A resilient design will include Backup&Recovery and, may include Disaster Recovery (DR) and High Availability (HA) depending on Service Level Availability (SLA) requirements. 
 
 
-# Backup and Recovery :
+Backup and Recovery :
 
 For HANA data protection, SAP provides tools: 
 - HANA Studio - An integrated development environment for managing, modeling, and monitoring SAP HANA databases.
