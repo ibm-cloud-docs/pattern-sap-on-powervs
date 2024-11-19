@@ -23,7 +23,7 @@ storage volumes is limited to the maximum number of IOPS based on storage tier.
 IBM Power Virtual Server offers you the option to select an I/O operation per second (IOPS) based storage as per your requirements. Flexible IOPS is a tier-less storage offering that removes the notion of disk type and replace it with a storage pool. Each of the storage pools supports multiple storage tiers. The storage tiers are based on different IOPS levels.
 
 
-The following tiers of FlashSystem storage is available for IBM Power System Virtual servers:
+**The following tiers of FlashSystem storage is available for IBM Power System Virtual servers:**
 
 - Fixed IOPs (5000 IOPs) - Provides a fixed performance level of 5000 IOPs, ideal for predictable workloads.
 - Tier 0 - High-performance storage for latency-sensitive, mission-critical applications.
