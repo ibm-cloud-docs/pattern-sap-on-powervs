@@ -15,7 +15,7 @@ keywords:
 # Resiliency design
 {: #resiliency-design}
 
-Resiliency solution components:
+**Resiliency solution components:**
 
 Resiliency is the ability of a workload to meet a specific target Service Level Objective (SLO), Service Level Availability (SLA) or recover from a service disruption and still meet the required SLA.  Resiliency needs to be considered at both the infrastructure and application layers across the entire solution.
 PVS regions
@@ -33,21 +33,21 @@ For HANA data protection, SAP provides tools:
 For SAP certified HANA backup tools, please refer to SAP note 2031547.
 On IBM Power System Virtual Servers, Veeam, Spectrum Protect and Cobalt Iron from Compass are recommended tools and services.
 
-Disaster Recovery:
+**Disaster Recovery:**
 
 Disaster Recovery is to recover and restore system operations after a disruptive event. These events can range from natural disasters like earthquakes or floods to man-made events like cyber-attacks, power outages, or hardware failures. 
 
 A performance-optimized disaster recovery (DR) solution is designed to not only recover from disruptions but also to do so in a manner that minimizes downtime and maintains performance levels close to or as good as the production environment. The goal is to ensure that recovery operations are efficient and that the DR site performs well during and after failover. 
 
-- Low Recovery Time Objective (RTO): Aim to minimize the time it takes to restore services to their normal state. This involves using technologies and strategies that allow for quick failover, such as pre-staged and fully synchronized replicas of data and systems.
-- Low Recovery Point Objective (RPO): Ensure that data loss is kept to a minimum by implementing frequent, near-real-time data replication and backup solutions. 
+- *Low Recovery Time Objective (RTO):* Aim to minimize the time it takes to restore services to their normal state. This involves using technologies and strategies that allow for quick failover, such as pre-staged and fully synchronized replicas of data and systems.
+- *Low Recovery Point Objective (RPO):* Ensure that data loss is kept to a minimum by implementing frequent, near-real-time data replication and backup solutions. 
 A cost-optimized disaster recovery (DR) solution aims to balance the need for effective disaster recovery with budget constraints. The focus is on achieving reliable recovery while managing and minimizing expenses.
 
 Instead of dedicated infrastructure for DR systems, which may be idle most of the time, shared infrastructure may be configured so that DR systems share the same compute with Non-Production systems, if segmentation/compliance/licensing/Non-Production system availability and other client requirements allow.
 
 Also, using reduced-size compute for dedicated DR systems may be an option as well. To reserve the capacity for DR systems, Shared Processor Pool can be setup with a small fee.
 
-High Availability :
+**High Availability :**
 
 High Availability Purpose and Metrics- 
 
@@ -57,7 +57,7 @@ Service Level Availability (SLA) is the major metrics for high availability. Whe
 
 
 
-Single Point Failures of SAP S/4HANA on IBM Power Systems Virtual Servers:
+**Single Point Failures of SAP S/4HANA on IBM Power Systems Virtual Servers:**
 
 
 | Components       | Recommendation   | 
@@ -82,7 +82,7 @@ To setup HA cluster for SAP applications and databases, both data replication an
 
 For more information on SAP HA Implementation on IBM Cloud: [SAP HA](https://cloud.ibm.com/docs/sap?topic=sap-ha-overview)
 
-Availability for SAP Central services :
+**Availability for SAP Central services :**
 
 The following should not be different for classic/VPC/PVS, since it is more on Operating System/Application layer. 
 1.	SAP documents on ASCS/ERS1: [SAP Doc](https://community.sap.com/t5/technology-blogs-by-members/sap-ascs-high-availability-using-ers-explained/ba-p/13511647){: external}
@@ -96,7 +96,7 @@ The following should not be different for classic/VPC/PVS, since it is more on O
 
 
 
-High Availability for SAP HANA :
+**High Availability for SAP HANA :**
 
 1.	SAP Documentation on SAP HANA replications, including synchronization mode and operation mode: [SAP Doc](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/6d252db7cdd044d19ad85b46e6c294a4.html){: external}
 2.	IBM Cloud documentation on SAP HANA high Availability: [SAP HA](https://cloud.ibm.com/docs/sap?topic=sap-ha-rhel-hana-sr)
