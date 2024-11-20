@@ -58,12 +58,12 @@ As noted in the architecture decisions in prior sections, IBM Cloud offers multi
     * Order [Direct Link Connect](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-connect) to each Region.
 
      **Alternative:**  [Direct Link Dedicated](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-dedicated) connections can be ordered.
-     
+
 *	 To order more Client VPNs for VPC, use [IBM Cloud Portal](https://cloud.ibm.com/vpc-ext/provision/vpnserver?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVZQTiNzZWFyY2hfcmVzdWx0cw%3D%3D)
 *	 To order more Transit Gateways, including Global Transit Gateway, use [IBM Cloud portal](https://cloud.ibm.com/interconnectivity/transit/provision?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPXRyYW5zaXQlMjUyMGdhdGV3YXkjc2VhcmNoX3Jlc3VsdHM%3D), or [Terraform IBM Module](https://github.com/terraform-ibm-modules/terraform-ibm-transit-gateway)
 *  To order Cloud Internet Services (CIS) , use the [IBM Cloud portal](https://cloud.ibm.com/catalog/services/internet-services?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPWNpcyNzZWFyY2hfcmVzdWx0cw%3D%3D), or the [Terraform IBM Module](https://github.com/terraform-ibm-modules/terraform-ibm-cis).
 *  To create more Power workspaces, use [Terraform IBM Module](https://github.com/terraform-ibm-modules/terraform-ibm-powervs-workspace)
-*  To create more Power virtual instances, use [Terraform IBM Module](file:///Users/lifanyu/Downloads/14.4.2	https:/github.com/terraform-ibm-modules/terraform-ibm-powervs-instance)
+*  To create more Power virtual instances, use [Terraform IBM Module](https:/github.com/terraform-ibm-modules/terraform-ibm-powervs-instance)
 *  To create more VPCs, use [Terraform IBM Module](https://github.com/terraform-ibm-modules/terraform-ibm-vpc)
 *  To create more VSIs in VPC, use [Terraform IBM Module](https://github.com/terraform-ibm-modules/terraform-ibm-vpc-vsi)
 *  For examples of Ansible automation on SAP Netweaver, SAP S/4HANA, SAP HANA installations, please look into the [code](https://github.com/terraform-ibm-modules/terraform-ibm-powervs-sap/tree/main/modules/ansible)
