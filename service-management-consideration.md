@@ -20,7 +20,7 @@ Typically, Service management tools are integrated with a centralized Service Ma
 NOTE: Power Systems Virtual Server and SysDig Integration : You can now seamlessly monitor your platform metrics within the IBM Cloud environment using the IBM Cloud Monitoring service. For detailed instructions on how to access and utilize this integration, please refer to the documentation: Monitoring metrics for Power Systems Virtual Server. 
 
  **IBM Cloud Monitoring with Sysdig :**
-[Sysdig](https://cloud.ibm.com/observability/catalog/ibm-cloud-monitoring?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPW1vbml0b3Jpbmcjc2VhcmNoX3Jlc3VsdHM%3D)
+[Doc](https://cloud.ibm.com/observability/catalog/ibm-cloud-monitoring?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPW1vbml0b3Jpbmcjc2VhcmNoX3Jlc3VsdHM%3D)
 * Purpose:   
      Provides real-time visibility into the performance and health of your SAP systems deployed on IBM Cloud.
 * Key Features:
@@ -29,7 +29,7 @@ NOTE: Power Systems Virtual Server and SysDig Integration : You can now seamless
    - Set up alerts for proactive monitoring of key performance indicators (KPIs).
    - Integration with IBM Cloud Logging for a comprehensive monitoring solution.
 
-**IBM Cloud Logs :** [CloudLogs](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started)
+**IBM Cloud Logs :** [Doc](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started)
 
 * Purpose: 
      Centralized logging service to collect, store, and analyze logs from SAP systems and other IBM Cloud services.
