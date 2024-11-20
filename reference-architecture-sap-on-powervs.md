@@ -18,7 +18,7 @@ keywords:
 
 The primary region supports Production workloads on Power Virtual Server. The secondary region supports nonproduction and disaster recovery workloads should the customer have DR requirements. The components deployed to the Edge VPC provide security functions and resource isolation to the IBM Cloud workloads.
 
-Figure 1 illustrates a high level architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
+**Figure 1** Illustrates a high level architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
 ## Architecture Diagram
 {: #architecture-diagram}
@@ -38,11 +38,7 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 
 
 
-
-
-
-
-Figure 2 illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
+**Figure 2** Illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
 ![A single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
 
