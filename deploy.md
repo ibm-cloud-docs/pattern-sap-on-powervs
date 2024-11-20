@@ -52,9 +52,9 @@ As noted in the architecture decisions in prior sections, IBM Cloud offers multi
 *  Enterprise connections from On-premise to IBM Cloud: \n
   1.1 Direct Link Connect
     This deployment guide assumes the remote side of this connection is already integrated with the exchange provider’s network. If not, please contact the provider to establish this connection.
-    - Review the list of Direct Link Connect [providers and locations](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-locations#connect-locations) to select a provider.
-    - Review [partner-specific](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-connect#instructions-partner) instructions.
-    - Order [Direct Link Connect](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-connect) to each Region. \n
+     > Review the list of Direct Link Connect [providers and locations](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-locations#connect-locations) to select a provider.
+    > Review [partner-specific](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-connect#instructions-partner) instructions.
+    > Order [Direct Link Connect](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-connect) to each Region. \n
   1.2 Alternative:  [Direct Link Dedicated](https://test.cloud.ibm.com/docs-draft/dl?topic=dl-how-to-order-ibm-cloud-dl-dedicated) connections can be ordered
 *	 To order more Client VPNs for VPC, use [IBM Cloud Portal](https://cloud.ibm.com/vpc-ext/provision/vpnserver?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVZQTiNzZWFyY2hfcmVzdWx0cw%3D%3D)
 *	 To order more Transit Gateways, including Global Transit Gateway, use [IBM Cloud portal](https://cloud.ibm.com/interconnectivity/transit/provision?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPXRyYW5zaXQlMjUyMGdhdGV3YXkjc2VhcmNoX3Jlc3VsdHM%3D), or [Terraform IBM Module](https://github.com/terraform-ibm-modules/terraform-ibm-transit-gateway)
