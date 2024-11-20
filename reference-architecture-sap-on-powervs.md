@@ -38,6 +38,10 @@ Figure 1 illustrates a high level architecture for a single-zone, multi-region d
 
 
 
+
+
+
+
 Figure 2 illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
 ![A single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
