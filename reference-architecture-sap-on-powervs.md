@@ -30,9 +30,9 @@ The primary region supports Production workloads on Power Virtual Server. The se
 
 2. An Edge VPC is deployed which contains routing and security functions.
 
-3. Transit Gateway to Power Virtual Server hosting the SAP application and databases
+3. Transit Gateway to Power Virtual Server hosting the SAP application and databases.
 
-4. Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
+4. Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC.
 
 5. Global Transit Gateway connecting the PowerVS environment across regions to facilitate replication for DR purposes.
 
