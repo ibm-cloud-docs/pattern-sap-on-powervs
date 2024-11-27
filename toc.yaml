@@ -14,18 +14,15 @@ toc:
     path: pattern-sap-on-powervs
     description: SAP PowerVS Architecture Pattern
     label: SAP on Power Virtual Server
-
   entries:
   - navgroup:
       id: overview
       topics:
       - overview.md
-
   - navgroup:
       id: architecture
       topics:
       - reference-architecture-sap-on-powervs.md
-
   - navgroup:
       id: plan
       topics:
@@ -42,6 +39,8 @@ toc:
             navtitle: Security
           - topic: resiliency-considerations.md
             navtitle: Resiliency
+          - topic: service-management-consideration.md
+            navtitle: Service Management
           - topic: migration-considerations.md
             navtitle: Migration
       - topicgroup:
@@ -59,7 +58,10 @@ toc:
             navtitle: Resiliency
           - topic: service-management-decisions.md
             navtitle: Service Management
-
+  - navgroup:
+      id: deploy
+      topics:
+      - deploy.md
   - navgroup:
       id: reference
       topics:

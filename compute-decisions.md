@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-11-17"
 
 subcollection: pattern-sap-on-powervs
 
@@ -17,8 +17,9 @@ keywords:
 
 | Architecture decision              | Requirement                             | Decision                | Rationale                                     |
 |----|----|----|----|
-| Compute (NetWeaver)                      | Target an environment to match specific workload requirements and be SAP certified |Power Virtual Server LPARs |Hardware flexibility limited to nonproduction environments \n For production use the SAP-certified profiles
-| Compute (HANA)                                  | Target an environment to match workload requirements and be SAP certified          | Power Virtual Server LPARs |Hardware flexibility limited to nonproduction environments \n For production use the SAP-certified profiles
-| Backup server (Spectrum Storage Protect) | Backup server sized for enough available storage                                | Bare Metal on Classic        |Bare Metal on Classic can accommodate large storage requirements for backups |
-| Virtual Servers (Edge VPC)               | Virtual servers for workloads in the Edge VPC                                   | VPC Virtual Servers          |                                                                                  |
-{: caption="Table 1. Architecture decisions for compute" caption-side="bottom"}
+| Compute (NetWeaver)                      | SAP certified \n  SAPS requirements |SAP certified on S922, E980, S1022 and E1080  \n Shared cores  |Each core provides 5570 – 7600 SAPS depending on the machine type. \n As granular as 0.25 cores can be provisioned for each VM. \n Resize could be done without restarting VM within a limit. |
+| Compute (HANA)                                  | SAP certified  \n  RAM/SAPS requirements          | SAP certified Scale-Up and Scale-Out HANA profiles on E980, S1022 and E1080 \n Dedicated cores |SAP certified HANA profiles, with RAM range from 256GB to 32TB RAM  \n  Select profiles for OLAP or OLTP  \n  Both scale-up and scale-out are supported.  \n  Each machine type has a max limit on number of cores and RAM. Make sure each HANA resource requirement is within the limit. |
+| Compute (AnyDB) | SAP certified    | SAP certified on S922, E980, S1022 and E1080        |Oracle should use dedicated cores. \n If no specific licensing requirement, shared cores may be use for other databases. |
+| Jump Box               | Segregate from Workloads \n Easy access from VPN \n  Can access Internet \n  Can connect to workload VMs                         | SAP certified Gen2 VSI in VPC Landing Zone          |                                                                                   |
+| Management Systems               | Segregate from Workloads  \n  Easy access from VPN  \n Can connect to workload VMs                         | Gen2 VSI in VPC Landing Zone (Edge VPC or Management VPC)          |                                                                                   |
+{: caption="Architecture decisions for compute" caption-side="bottom"}

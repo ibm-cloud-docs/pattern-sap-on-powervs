@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-11-17"
 
 subcollection: pattern-sap-on-powervs
 
@@ -15,11 +15,9 @@ keywords:
 # Compute design
 {: #compute-design}
 
-Power Virtual Servers are available with flexible hardware
-configurations on both Power S922 and E980. In
-accordance with existing SAP NetWeaver or SAP AnyDB for IBM Power
-Systems best practices and guidance from SAP, it is permitted to define a
-custom size of the IBM Power Virtual Server to use for SAP NetWeaver.
+IBM® Power® Virtual Server is an IBM Power server offering. You can use the Power Virtual Server to deploy a virtual server, also known as a logical partition (LPAR), in a matter of minutes. You can provision flexible, secure, and scalable compute capacity for Power enterprise workloads both on IBM Power Virtual Server (Off-premises and On-premises) in your data center.
+
+IBM Power System Virtual Servers are currently available with flexible hardware configurations on Power S922, S1022, E980, E1050 and E1080. 
 
 The Flexibility of IBM Power Systems Virtual Servers hardware capability
 includes:
@@ -38,49 +36,21 @@ includes:
 
 -   PowerVM Host CPU Binding (dedicated or shared)
 
-PowerVS custom profiles are for nonproduction for testing or
-development use only. Custom, non-SAP Certified profiles aren't
-intended for production deployments and aren't supported or certified
-for SAP production. Custom profiles should not be used to go from a
-nonproduction environment to a production environment.
+-   Shared Processor Pool for capacity reservation
 
-Multiple SAP Certified Power Virtual Server profiles are available.
+SAP has certified Power Systems Virtual Server profiles to meet client requirements. Please refer to SAP notes 2947579 and 2855850 for the most up to date information. All SAP HANA profiles require dedicated cores. SAP HANA scale-up and scale-out configurations are both supported on IBM Power Systems Virtual servers. 
 
-NetWeaver PowerVS profiles:
-* [IBM Power Virtual Server certified profiles for SAP NetWeaver](/docs/sap?topic=sap-nw-iaas-offerings-profiles-power-vs)
+For information on SAP HANA Scale Out configuration on IBM Power Systems Virtual servers: 
+[IBM Power Virtual Server certified profiles for SAP NetWeaver](https://cloud.ibm.com/docs/sap?topic=sap-refarch-hana-scaleout){: external} 
 
-HANA PowerVS profiles:
-* [IBM Power Virtual Server certified profiles for SAP HANA](/docs/sap?topic=sap-hana-iaas-offerings-profiles-power-vs)
+IBM Power Virtual Servers are available with fully adjustable CPU Cores and Memory (RAM GB). It is permitted to define a custom size of the IBM Power Virtual Server to use for SAP NetWeaver, in accordance with existing SAP NetWeaver or AnyDB for IBM Power Systems best practices and guidance from SAP.
 
-For more sizing information, see [Sizing process for SAP Systems](/docs/sap?topic=sap-sizing&interface=ui)
+Compute and OS considerations: 
+[OS considerations](https://cloud.ibm.com/docs/sap?topic=sap-compute-os-design-considerations){: external} 
 
-For a distributed SAP installation, it is best to have all nodes in the
-same location (Availability Zone or Datacenter). Deviation from this
-setup can cause latency and timeouts, which render your SAP system
-unresponsive. Therefore, SAP does not support the application layer and database to be deployed across different zones or COLOs. The application and database layers must exist in the same availability zone or COLO.
+For sizing information see:  Sizing process for SAP Systems
+[sizing information](https://cloud.ibm.com/docs/sap?topic=sap-sizing&interface=ui){: external} 
 
-Databases typically experience growth over time so database size and
-expected data growth rates should be considered when you
-plan database deployments.
+For a distributed SAP installation, to avoid latency caused issues, SAP does not support the application and database layers to be deployed across different platforms.
 
-## SAP AnyDB
-{: #sap-anydb}
-
-AnyDB refers to any non-HANA, SAP supported database. SAP supports: IBM
-Db2, Oracle, Microsoft SQL Server, SAP Max DB, SAP ASE, and SAP IQ.
-
-Deploying SAP AnyDB on IBM PowerVS is similar to deployments with
-infrastructure with on-premises data centers. You can use the information that is provided from SAP and the RDBMS providers. The following links contain design considerations for each database:
-
-* [IBM Db2](/docs/sap?topic=sap-anydb-ibm-db2)
-* [SAP Max DB](/docs/sap?topic=sap-anydb-sap-maxdb)
-* [SAP ASE](/docs/sap?topic=sap-anydb-sap-ase)
-* [SAP IQ](/docs/sap?topic=sap-anydb-sap-iq)
-
-Oracle RAC for high availability and Oracle Data Guard for disaster
-recovery can be deployed to PowerVS as an AnyDB option. Best practices
-and guidance for both can be found at the following links:
-
-* [Oracle RAC on PowerVS](/docs/pattern-oracle-rac-on-powervs?topic=pattern-oracle-rac-on-powervs-overview)
-
-* [Oracle Disaster Recovery that uses Data Guard](/docs/pattern-oracle-disaster-recovery-on-powervs?topic=pattern-oracle-disaster-recovery-on-powervs-Oracle-dr-ibm-pvs#oracle-data-guard)
+Shared processor Pool offers an option for clients to reserve capacity with minimum compute for Disaster Recovery systems. 

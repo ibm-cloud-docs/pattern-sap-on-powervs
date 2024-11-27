@@ -1,24 +1,14 @@
 ---
+
 copyright:
   years: 2024
-lastupdated: "2024-01-12"
+lastupdated: "2024-11-17"
 
 subcollection: pattern-sap-on-powervs
-
 keywords:
-# The release that the reference architecture describes
 
-authors:
-  - name: Doug Eppard
-
-version: 1.0
-
-deployment-url:
-
-docs: https://cloud.ibm.com/docs/pattern-sap-on-powervs
-
-content-type: reference-architecture
 ---
+
 {{site.data.keyword.attribute-definition-list}}
 
 # SAP on Power Virtual Server
@@ -28,55 +18,55 @@ content-type: reference-architecture
 
 The primary region supports Production workloads on Power Virtual Server. The secondary region supports nonproduction and disaster recovery workloads should the customer have DR requirements. The components deployed to the Edge VPC provide security functions and resource isolation to the IBM Cloud workloads.
 
-Figure 1 illustrates a high level architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
+**Figure 1** Illustrates a high level architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
 ## Architecture Diagram
 {: #architecture-diagram}
 
-![SAP Single-zone, multi-region deployment on IBM Cloud PowerVS](image1.png){: caption="Figure 1. SAP Single-zone, multi-region deployment on IBM Cloud PowerVS" caption-side="bottom"}
+![SAP Single-zone, multi-region deployment on IBM Cloud PowerVS](image1.png){: caption="SAP Single-zone, multi-region deployment on IBM Cloud PowerVS" caption-side="bottom"}
 
 
 1. Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
 
 2. An Edge VPC is deployed which contains routing and security functions.
 
-3. Transit Gateway to Power Virtual Server hosting the SAP application and databases
+3. Transit Gateway to Power Virtual Server hosting the SAP application and databases.
 
-4. Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
+4. Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC.
 
 5. Global Transit Gateway connecting the PowerVS environment across regions to facilitate replication for DR purposes.
 
 
 
-Figure 2 illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
+**Figure 2** Illustrates a detailed architecture for a single-zone, multi-region deployment on IBM Cloud Power Virtual Server.
 
-![illustrates a detailed network and component architecture for a
-single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="Figure 2. A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
+![A single-zone, multi-region deployment to facilitate disaster recovery](image2.png){: caption="A single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
 
 ### Architecture description
 {: #architecture-description}
 
-1. Two separate IBM Cloud regions, one containing production, the other containing both nonproduction and DR.
+1. Two separate IBM Cloud regions, one for Primary workload and the other for Disaster Recovery. If Cost Optimized Disaster Recovery is considered, some Non Production systems may share the same compute with Disaster Recovery systems.
 
-2. Client network connectivity is accomplished through Direct Links to each region with VPN access for MSPs.
+2. Enterprise network connectivity from On-premise to IBM Cloud is accomplished through Direct Links. 
 
 3. An Edge VPC is deployed which contains routing and security functions. For security purposes, all ingress and egress traffic will route through the Edge VPC. It contains an sFTP server, Bastion host (jump), Firewalls providing advanced security functions and the SAP router and Web Dispatcher.
 
-4. The Edge VPC is connected to PowerVS through a local Transit Gateway and hosts the SAP application and databases.
+4. Besides Power Workloads in Power workspace, x86 workloads may be implemented in a Workload VPC. To backup Power workloads, Secure Automated Backup with Compass by Cobalt Iron is implemented. The private end point for this backup service is located in VPC.
 
-5. Public connectivity routes through Cloud Internet services that can provide load balancing, failover, and DDoS services, then routes to the edge VPC
+5. VPCs are connected to Power workspace through a local Transit Gateway.
 
-6. PowerVS contains SAP Application components that are hosted on redundant SAP certified LPARS in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
+6. Public connectivity routes through Cloud Internet Services which can provide global load balancing, failover, and DDoS services, then routes to the VPC Landing Zone.
 
-7. SAP HANA is hosted on separate SAP certified LPARs in the same zone, by using local Tier 1 storage.
+7. SAP workloads may be hosted on redundant SAP certified LPARS in PowerVS.
 
-8. Virtual Private endpoints are used to provide connectivity to cloud native services
+8. SAP Application and SAP HANA should be placed on SAP certified LPARs within the zone with proximity considered.
 
-9. Global Transit Gateway connecting PowerVS across regions for data replication purposes between the two regions.
+9. Virtual Private endpoints are used to provide connectivity to cloud native services.
 
-10. Multiple LPARs are used to provide 99.95% availability within a zone
+10. Global Transit Gateway connecting PowerVS across regions for data replication purposes between the two regions.
 
-11. Bare Metals in classic to provide backups by using IBM Storage Protect
+11.	To achieve 99.95% infrastructure availability, multiple LPARs in the same placement group within a zone can be implemented.
+
 
 ## Design scope
 {: #design-scope}
@@ -101,7 +91,7 @@ to make the necessary design and component choices to ensure the
 applicable requirements for each aspect and domain have been
 considered.
 
-![domains that are covered in this solution](image3.png){: caption="Figure 3. Domains that are covered in this solution" caption-side="bottom"}
+![domains that are covered in this solution](image3.png){: caption="Domains that are covered in this solution" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
@@ -114,7 +104,7 @@ successful SAP deployment.
 | Network            | Enterprise connectivity to customer data centers to provide access to applications from on-premises                                                                                                                                                                                                                                    |
 |                    | Map and convert existing customer SAP Network functions into IBM Cloud and PowerVS networking services                                                                                                                                                                                                                            |
 |                    | Migrate/Redeploy customer IP addressing scheme within the IBM Cloud environment                                                                                                                                                                                                                                                       |
-|                    | Provide network isolation with the ability to segregate applications based on attributes such as data classification, public versus internal apps, and function                                                                                                                                                                            |
+|                    | Provide network isolation with the ability to segregate applications based on attributes such as data classification, public versus internal apps, and function                                                                                                                                                                            |
 | Security           | Provide data encryption in transit and at rest                                                                                                                                                                                                                                                                                        |
 |                    | Migrate customer IDS/IAM Services to target IBM Cloud environment                                                                                                                                                                                                                                                                     |
 |                    | Retain the same firewall rulesets across existing DCs                                                                                                                                                                                                                                                                                 |
@@ -123,9 +113,7 @@ successful SAP deployment.
 |                    | Provide backups for data retention                                                                                                                                                                                                                                                                                                    |
 |                    | RTO/RPO = 4 hours/15 minutes; Rollback to original environments should occur no later than specified RTOs                                                                                                                                                                                                                             |
 |                    | 99.95 Availability                                                                                                                                                                                                                                                                                                                    |
-|                    | Backups                                                                                                                                                                                                                                                                                                                               |
-|                    | -   Prod: Daily Full, logs per SAP product standard, 30 days retention time                                                                                                                                                                                                                                                           |
-|                    | -   Non-Prod: Weekly full, logs per SAP product standard, 14 days retention time                                                                                                                                                                                                                                                      |
+|                    | Backups  \n  * Prod: Daily Full, logs per SAP product standard, 30 days retention.  \n   *  Non-Prod: Weekly full, logs per SAP product standard, 14 days retention time.                                                                                                                                                                          |
 | Service Management | Provide Health and System Monitoring with ability to monitor and correlate performance metrics and events and provide alerting across applications and infrastructure                                                                                                                                                                 |
 |                    | Ability to diagnose issues and exceptions and identify error sources                                                                                                                                                                                                                                                                  |
 |                    | Automate management processes to keep applications and infrastructure secure, up to date, and available                                                                                                                                                                                                                               |
@@ -135,7 +123,7 @@ successful SAP deployment.
 |                    | Cloud infrastructure for the proposed IaaS solution must be SAP Certified                                                                                                                                                                                                                                                             |
 |                    | IBM Cloud IaaS is deployed to support SAP and surrounding non-SAP workloads                                                                                                                                                                                                                                                      |
 |                    | The customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider a Cloud deployment solution that would facilitate a future RISE transformation |
-{: caption="Table 1. Requirements" caption-side="bottom"}
+{: caption="Requirements" caption-side="bottom"}
 
 ## Components
 {: #components}
@@ -166,7 +154,7 @@ successful SAP deployment.
 |                                    | [Virtual Private Clouds (VPCs), Subnets, Security Groups, ACLs](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)                                                                     | Core Network Protection and isolation                                                                       |
 |                                    | Isolated PowerVS LPARs                                                                                                                                                                                      |                                                                                                             |
 |                                    | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)                                                                                                                   | DDoS protection and Web App Firewall                                                                        |
-|                                    |Choose one of the following: \n  - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n  - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                      |IPS/IDS protection at all ingress/egress \n Unified Threat Management (UTM) Firewall                                                                |
+|                                    |Choose one of the following: \n  - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global)  \n  - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                      |IPS/IDS protection at all ingress/egress \n Unified Threat Management (UTM) Firewall                                                                |
 | Resiliency                         | HANA System Replication (HSR)                                                                                                                                                                               | Provide 99.95% availability for HANA DB                                                                     |
 |                                    | [IBM Storage Protect](https://cloud.ibm.com/media/docs/downloads/power-iaas/PowerVS_AIX_Backup_Performance_Best_Practices_and_Guidelines_v1_0_03012022.pdf)                                                 | Backups and restores for images and file systems.                                                           |
 |                                    | [GRS](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started-GRS)                                                                                                                           |                                                                                                             |
@@ -174,7 +162,7 @@ successful SAP deployment.
 |                                    | Native database backup capabilities                                                                                                                                                                         | AnyDB backups                                                                                               |
 | Service Management (Observability) | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                                             |
 |                                    | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Application and operational logs                                                                            |
-{: caption="Table 2. Components" caption-side="bottom"}
+{: caption="Components" caption-side="bottom"}
 
 As mentioned earlier, the [Architecture
 Framework](/docs/architecture-framework?topic=architecture-framework-intro)

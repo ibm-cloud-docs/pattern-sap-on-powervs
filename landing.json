@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "title": "SAP on Power Virtual Server",
+  "introduction":"This is a landing page for the reference architecture describing how to host SAP on IBM Power Virtual Server environment.",
+  "section_topics": {
+  "links": [
+    {
+      "title": "Overview",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-overview"
+    },
+    {
+      "title": "Reference Architecture",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-sap-on-powervs"
+    },
+    {
+      "title": "Planning",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-compute-design"
+    },
+    {
+      "title": "Deploying",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-compute-design"
+    },
+    {
+      "title": "Reference",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-compute-design"
+    }
+  ]
+},
+  "section_architectures": [
+    {
+      "title": "SAP on IBM Power Virtual Servers",
+      "href": "/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-overview",
+      "deployable": false
+    }
+  ]
+ }
