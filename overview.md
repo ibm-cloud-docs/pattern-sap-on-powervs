@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-17"
+  years: 2026
+lastupdated: "2026-01-16"
 
 subcollection: pattern-sap-on-powervs
 keywords:
