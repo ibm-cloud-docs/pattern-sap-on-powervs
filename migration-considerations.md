@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-17"
+  years: 2026
+lastupdated: "2026-01-16"
 
 subcollection: pattern-sap-on-powervs
 
@@ -25,7 +25,7 @@ DB conversion or application server upgrade.
 
 For a list of migration options and tools, see [Moving SAP Workloads](/docs/sap?topic=sap-faq-moving-sap-workloads#faq-moving-sap-workloads-overview).
 
-Types for SAP Migration : 
+Types for SAP Migration :
 
 There are two types of SAP migration categories:
 
@@ -42,8 +42,8 @@ preferences.
 {: #homogeneous-migration}
 
 | Migration method                                       | Technique summary                                                  | Advantages and concerns                                                 | Associated tools**                                                  |
-|----|----|----|----|
-| Virtual Machine (VM) Backup and Restore                     | Create lpar image while application is offline. Use the image to create a VM on IBM Power System Virtual Server                                                                                  |-	Lift and shift operation. \n  -	Potentially big downtime window so it is best for smaller images \n  -	Configurations may need to be updated post migration. | Aspera for data transfer  \n  IBM Expert Labs for optional professional migration service  |
+| - | - | - | - |
+| Virtual Machine (VM) Backup and Restore                     | Create lpar image while application is offline. Use the image to create a VM on IBM Power System Virtual Server                                                                                  | -	Lift and shift operation. \n  -	Potentially big downtime window so it is best for smaller images \n  -	Configurations may need to be updated post migration. | Aspera for data transfer  \n  IBM Expert Labs for optional professional migration service  |
 | Database Backup and Restore                     | Backup the source database using native DBMS tools. \n   Restore backup copy to a "shell" copy of source system prebuilt on PowerVS, using identical versions of software.    |-   Time to transfer large database backups may require big downtime window. \n  -	•	Target needs same/compatible vendor software to restore from backups file(s) received. | Aspera for initial data transfer \n  Backup/Restore tools for backup and recovery, as well as delta sync: Veeam, Spectrum Protect and Cobalt Iron by Compass    |
 | Fresh Build and Copy the Config                     | Build a fresh copy of the SAP system on PowerVS and copy/reenter configuration parameters as required.    |Good for applications and middleware servers not requiring data transfer.                                                                                                 Risk of error introduction if post installation manual procedures are applied to reproduce exact configuration. |     |
 | Create a Disaster Recovery System                     | Create a DR system on IBM Power System Virtual Servers and establish continuous data replication until Failover during GoLive    |Minimum downtime.  | Database native such as  HANA System Replication  \n  Continuous Data Protection: Veeam, Spectrum Protect \n  Third Party tools for replication, such as LinBit DR     |
@@ -61,14 +61,13 @@ preferences.
 
 IBM Migration services:
 
-*	Expert Labs  
-* IBM Services for Cloud Migration 
-* IBM Cloud Partners 
+*	Expert Labs
+* IBM Services for Cloud Migration
+* IBM Cloud Partners
 
 
-More Information on SAP Migration to IBM Power Systems Virtual Servers : 
+More Information on SAP Migration to IBM Power Systems Virtual Servers :
 
-- For more information on migrating SAP to IBM Power System Virtual servers: [Doc](https://cloud.ibm.com/docs/sap?topic=sap-sapmig-overview)
+- For more information on migrating SAP to IBM Power System Virtual servers: [Doc](/docs/sap?topic=sap-sapmig-overview)
 
-- For more information on migration to IBM Power System Virtual server, especially if you have workloads on AIX or IBM i, please refer to: 
-[Doc](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-system-migration)
+- For more information on migration to IBM Power System Virtual server, especially if you have workloads on AIX or IBM i, please refer to: [Doc](/docs/power-iaas?topic=power-iaas-system-migration)
